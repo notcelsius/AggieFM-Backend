@@ -1,12 +1,9 @@
 const express = require("express")
 const router = express.Router()
+const { getCard, createCard } = require("../controllers/cardController")
 
-router.route("/").get((req, res) => {
-    res.status(200).json({ message: "Get card"})
-})
+router.route("/").get(getCard)
 
-router.route("/").post((req, res) => {
-    res.status(200).json({ message: "Post card"})
-})
+router.route("/").post(createCard)
 
 module.exports = router
