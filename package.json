@@ -1,0 +1,25 @@
+{
+  "name": "aggiefm-backend",
+  "version": "1.0.0",
+  "description": "Backend for AggieFM app",
+  "keywords": [
+    "express",
+    "postgres",
+    "backend"
+  ],
+  "homepage": "https://github.com/notcelsius/AggieFM-Backend#readme",
+  "bugs": {
+    "url": "https://github.com/notcelsius/AggieFM-Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/notcelsius/AggieFM-Backend.git"
+  },
+  "license": "ISC",
+  "author": "Kelvin Trinh",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
