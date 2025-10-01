@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: aggiefm-postgres
+    restart: always
+    ports:
+      - "5432:5432" # host:container
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: aggiefm
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:  
+  pgdata:
