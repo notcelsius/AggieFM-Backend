@@ -1,5 +1,5 @@
 const asyncHandler = require("express-async-handler")
-const {getCards, createCard} = require("../db/cardQueries")
+const {getCards, createCard, userPostedToday} = require("../db/cardQueries")
 
 //@desc Get all cards
 //@route GET /api/cards

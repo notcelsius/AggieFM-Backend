@@ -28,4 +28,4 @@ async function userPostedToday(userId) {
 }
 
 
-module.exports = {getCards, createCard}
+module.exports = {getCards, createCard, userPostedToday}
