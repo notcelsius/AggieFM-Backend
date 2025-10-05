@@ -9,6 +9,7 @@ const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use("/api/cards", require("./routes/cardRoutes"))
+app.use("/auth", require("./routes/authRoutes"))
 
 
 app.listen(port, () => {
