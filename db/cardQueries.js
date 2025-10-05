@@ -18,5 +18,14 @@ async function createCard({ userId, lat, lng, spotifyTrackId, caption }) {
   return result.rows[0];
 }
 
+async function userPostedToday(userId) {
+  const r = await pool.query(
+    `SELECT 1 FROM cards
+      WHERE user_id = $1 AND ${todayPT}
+      LIMIT 1`, [userId]
+  );
+  return r.rowCount > 0;
+}
+
 
 module.exports = {getCards, createCard}
