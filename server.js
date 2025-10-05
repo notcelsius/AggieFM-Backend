@@ -1,5 +1,5 @@
 const express = require("express")
-const dotenv = require("dotenv").config({ override: true });
+const dotenv = require("dotenv").config();
 
 const app = express()
 
