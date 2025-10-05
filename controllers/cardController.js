@@ -1,22 +1,26 @@
 const asyncHandler = require("express-async-handler")
+const {getCards, createCard} = require("../db/cardQueries")
 
 //@desc Get all cards
 //@route GET /api/cards
 //@access public
-const getCard = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: "Get card"})
+const getAllCards = asyncHandler(async (req, res) => {
+    const cards = await getCards()
+    res.status(200).json({cards})
 })
 
 //@desc Create new card
 //@route POST /api/cards
 //@access public
-const createCard = asyncHandler(async (req, res) => {
-    const {lat, lng, spotifyTrackID, caption} = req.body
-    if (!lat || !lng || !spotifyTrackID || !caption) {
+const postCard = asyncHandler(async (req, res) => {
+    const userId = 1
+    const {lat, lng, spotifyTrackId, caption} = req.body
+    if (!lat || !lng || !spotifyTrackId || !caption) {
         res.status(400)
         throw new Error("All fields are mandatory")
     }
+    const card = await createCard(userId, lat, lng, spotifyTrackId, caption)
     res.status(201).json({ message: "Post card"})
 })
 
-module.exports = {getCard, createCard}
+module.exports = {getAllCards, postCard}
