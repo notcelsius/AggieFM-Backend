@@ -15,9 +15,9 @@ const getAllCards = asyncHandler(async (req, res) => {
 const postCard = asyncHandler(async (req, res) => {
     const userId = 1
     const {lat, lng, spotifyTrackId, caption} = req.body
-    if (!lat || !lng || !spotifyTrackId || !caption) {
+    if (!lat || !lng || !spotifyTrackId) {
         res.status(400)
-        throw new Error("All fields are mandatory")
+        throw new Error("lat, lng, and spotifyTrackId are required")
     }
     const card = await createCard(userId, lat, lng, spotifyTrackId, caption)
     res.status(201).json({ message: "Post card"})
